@@ -21,7 +21,7 @@ queryBuilder
 	.Having("COUNT(*)", Comparison.GreaterThan, 5)
 	.OrderBy("customers.name");
 ```
-Results in Query:
+Query:
 >SELECT customers.name,customers.firstname,regions.city FROM [dbo].[customers] 
 INNER JOIN [dbo].[regions] ON customers.zip = regions.zip 
 WHERE regions.city LIKE 'do%' 
@@ -36,7 +36,7 @@ queryBuilder
 	.Where("zip", Comparison.In, new SqlLiteral("'58965','47841','12569'"))
 	.OrderBy("name", Order.Descending);
 ```
-Results in Query
+Query:
 >SELECT * FROM [dbo].[customers] 
 WHERE zip IN ('58965','47841','12569') 
 ORDER BY name DESC
@@ -53,7 +53,7 @@ queryBuilder
 		new WhereClause("name", Comparison.Like, "pe%"),
 	}));
 ```
-Results in Query
+Query:
 >SELECT TOP 100 * FROM [dbo].[customers] 
 WHERE age < 55 AND 
 (name LIKE 'jo%' OR name LIKE 'pe%')
