@@ -33,12 +33,12 @@ Code:
 ```
 queryBuilder
 	.FromTable("customers")
-	.Where("plz", Comparison.In, new SqlLiteral("'58965','47841','12569'"))
+	.Where("zip", Comparison.In, new SqlLiteral("'58965','47841','12569'"))
 	.OrderBy("name", Order.Descending);
 ```
 Results in Query
 >SELECT * FROM [dbo].[customers] 
-WHERE plz IN ('58965','47841','12569') 
+WHERE zip IN ('58965','47841','12569') 
 ORDER BY name DESC
 
 Code:
