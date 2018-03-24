@@ -2,11 +2,11 @@
 ======================
 ***
 
-###WHAT
+### WHAT
 
 >With this Class you can build complex and flexible SQL Queries in C#
 
-###SAMPLES
+### SAMPLES
 ```
 var queryBuilder = new SelectQueryBuilder();
 ```
